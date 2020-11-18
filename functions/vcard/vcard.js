@@ -1,7 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server-lambda')
 var faunadb = require('faunadb'),
   q = faunadb.query;
-  const shortid = require('shortid');
+const shortid = require('shortid');
 
 
 const typeDefs = gql`
@@ -30,16 +30,16 @@ const typeDefs = gql`
      }
 `
 
- 
+
 
 const resolvers = {
   Query: {
-     
-     getVCard: async () => {
 
-      try{
+    getVCard: async () => {
+
+      try {
         var adminClient = new faunadb.Client({ secret: 'fnAD6USJAlACAZclbn1CG-tLg-lvV7mp_sCEwD9e' });
-     
+
         const result = await adminClient.query(
           q.Map(
             q.Paginate(q.Match(q.Index('lollyindex'))),
@@ -49,36 +49,36 @@ const resolvers = {
 
         console.log(result)
 
-         return result.data.map(d=>{
-           return {
-             id:d.ts,
-             c1:d.data.c1,
-             c2:d.data.c2,
-             c3:d.data.c3,
-             rec:d.data.rec,
-             sender:d.data.sender,
-             msg:d.data.msg
-           }
-         })
+        return result.data.map(d => {
+          return {
+            id: d.ts,
+            c1: d.data.c1,
+            c2: d.data.c2,
+            c3: d.data.c3,
+            rec: d.data.rec,
+            sender: d.data.sender,
+            msg: d.data.msg
+          }
+        })
 
       }
-      catch(error){
+      catch (error) {
         console.log(error);
 
       }
 
 
-       
+
     }
-     
+
   },
-  Mutation:{
-    addVCard: async (_,{c1,c2,c3,rec,sender,msg})=>{
-    console.log("============")
-    console.log(c1,c2,c3,rec,sender,msg)
-    
-    try {
-      var adminClient = new faunadb.Client({ secret: 'fnAD6USJAlACAZclbn1CG-tLg-lvV7mp_sCEwD9e' });
+  Mutation: {
+    addVCard: async (_, { c1, c2, c3, rec, sender, msg }) => {
+      console.log("============")
+      console.log(c1, c2, c3, rec, sender, msg)
+
+      try {
+        var adminClient = new faunadb.Client({ secret: 'fnAD6USJAlACAZclbn1CG-tLg-lvV7mp_sCEwD9e' });
 
 
         const result = await adminClient.query(
@@ -87,7 +87,7 @@ const resolvers = {
             q.Collection('lollycollection'),
             {
               data: {
-                c1,c2,c3,rec,sender,msg,
+                c1, c2, c3, rec, sender, msg,
                 link: shortid.generate()
               }
             },
@@ -99,14 +99,14 @@ const resolvers = {
         return result.data.data;
 
 
-    } catch (error) {
-      console.log(error)
-      
+      } catch (error) {
+        console.log(error)
+
+      }
+
+
+
     }
-    
-    
-   
-  }
   }
 }
 
