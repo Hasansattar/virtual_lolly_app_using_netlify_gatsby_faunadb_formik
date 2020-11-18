@@ -1,0 +1,32 @@
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px gray;
+    padding: 20px;
+    margin-top: 70px;
+    text-align: center;
+    background-color: #21212b;
+    color: white;
+    
+}
+
+.main-container{
+    /* max-width: 600px;
+    margin: 0 auto; */
+    display: flex;
+    justify-content: space-around;
+     /* box-shadow: 0 0 20px gray;
+    padding: 20px;
+    margin-top: 70px; */
+} 
+.form-container{
+    display: flex;
+    flex-direction: column;
+}
+.form-container > * {
+    margin: 10px 0;
+    padding: 8px 15px;
+}
+.form-container > textarea{
+    height: 250px;
+}
