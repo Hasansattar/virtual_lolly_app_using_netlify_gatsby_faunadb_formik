@@ -58,11 +58,13 @@ h1{
     display:flex;
     justify-content: center;
     color: #fff;
+    text-shadow: #fa73d9 0 0 8px
 }
 p{
     display:flex;
     justify-content: center;
     color: #fff;
+    text-shadow: #fa73d9 0 0 8px
 }
 .main-lolly{
     min-width: 100%;
@@ -87,4 +89,5 @@ button{
     width: 232px;
     border-radius: 10px;
     height: 30px;
+    border:2px solid red;
 }

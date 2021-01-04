@@ -99,7 +99,7 @@ export default function Home() {
 
           <button onClick={handleSubmit} onClick={() => {
           navigate("/template")
-        }} >Send</button>
+        }} >Freez Lolly</button>
 
 
 

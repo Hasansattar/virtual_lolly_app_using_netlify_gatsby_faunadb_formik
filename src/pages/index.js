@@ -10,21 +10,21 @@ export default function Home() {
            <Header/>
 
         <div className="main-lolly">
-          <label className="lolly">
+        
           <Lolly top="red" middle="green" bottom="blue"  />
-          </label>
-          <label className="lolly">
-          <Lolly top="pink" middle="skyblue" bottom="yellow" className="lolly" />
-          </label>
-          <label className="lolly">
-          <Lolly top="blue" middle="silver" bottom="blue" className="lolly" />
-          </label>
-          <label className="lolly">
-          <Lolly top="purple" middle="blue" bottom="green" className="lolly" />
-          </label>
-          <label className="lolly">
-          <Lolly top="orange" middle="pink" bottom="blue" className="lolly" />
-          </label>
+        
+        
+          <Lolly top="pink" middle="skyblue" bottom="yellow"  />
+        
+        
+          <Lolly top="blue" middle="silver" bottom="blue"  />
+        
+        
+          <Lolly top="purple" middle="blue" bottom="green"  />
+        
+        
+          <Lolly top="orange" middle="pink" bottom="blue"  />
+        
         </div>
 
         <div className="button">
@@ -34,7 +34,7 @@ export default function Home() {
               navigate("/Home")
             }}
           >
-            create lolly
+            Create Lolly
           </button>
         </div>
       </div>
