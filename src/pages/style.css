@@ -18,13 +18,13 @@ body{
 }
 
 .main-container{
-    /* max-width: 600px;
-    margin: 0 auto; */
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
-     /* box-shadow: 0 0 20px gray;
+     box-shadow: 0 0 20px gray;
     padding: 20px;
-    margin-top: 70px; */
+    
 } 
 .form-container{
     display: flex;
@@ -37,7 +37,19 @@ body{
 .form-container > textarea{
     height: 250px;
 }
+input{
+    box-shadow: 0 0 6px #fa73d9;
+    border: 2px solid #fa73d9;
+    background-color: transparent;
+    color: wheat;
+}
 
+textarea{
+    box-shadow: 0 0 6px #fa73d9;
+    border: 2px solid #fa73d9;
+    background-color: transparent;
+    color: wheat;
+}
 
 
 
@@ -58,7 +70,8 @@ h1{
     display:flex;
     justify-content: center;
     color: #fff;
-    text-shadow: #fa73d9 0 0 8px
+    text-shadow: #41293b 0 0 8px;
+    font-family: Yellowtail,cursive;
 }
 p{
     display:flex;
@@ -86,8 +99,21 @@ p{
     
 }
 button{
-    width: 232px;
+
+    margin-top: 1em;
+    box-shadow: 0 0 6px #fa73d9;
+    border: 2px solid #fa73d9;
+    background-color: transparent;
+    font-size: .9em;
+    color: #fa73d9;
+    padding: 1em 2em;
+    border-radius: 4em;
+    cursor: pointer;
+    transition: all .3s;
+    /* width: 232px;
     border-radius: 10px;
     height: 30px;
-    border:2px solid red;
+    border:2px solid red; */
 }
+
+

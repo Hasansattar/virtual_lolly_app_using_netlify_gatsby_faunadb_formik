@@ -82,7 +82,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h2>CREATE LOLLY</h2>
+      <h1>CREATE LOLLY</h1>
       <div className="main-container">
         <div>
           <Lolly top={c1} middle={c2} bottom={c3} />
@@ -99,7 +99,7 @@ export default function Home() {
 
           <button onClick={handleSubmit} onClick={() => {
           navigate("/template")
-        }} >Freez Lolly</button>
+        }} >Freeze Lolly</button>
 
 
 
