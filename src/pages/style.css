@@ -1,9 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:  #21212b;
+    align-items: center;
+}
 .container{
-    max-width: 600px;
+    max-width: 100%;
+    height: 100%;
     margin: 0 auto;
     box-shadow: 0 0 20px gray;
     padding: 20px;
-    margin-top: 70px;
+ 
     text-align: center;
     background-color: #21212b;
     color: white;
@@ -29,4 +36,55 @@
 }
 .form-container > textarea{
     height: 250px;
+}
+
+
+
+
+
+/* main page css */
+
+.main{
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:auto ;
+    margin-right: auto;
+    background-color: #21212b;
+}
+h1{
+    display:flex;
+    justify-content: center;
+    color: #fff;
+}
+p{
+    display:flex;
+    justify-content: center;
+    color: #fff;
+}
+.main-lolly{
+    min-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:0 auto;
+}
+.main-lolly .lollipop{
+    height: 300px;
+}
+ 
+.button{
+   
+     margin:50px auto;
+     display: flex;
+     justify-content: center;
+    
+}
+button{
+    width: 232px;
+    border-radius: 10px;
+    height: 30px;
 }
