@@ -1,13 +1,21 @@
 {
-  "name": "vcard",
+  "name": "apollo-graphql",
   "version": "1.0.0",
-  "description": "",
-  "main": "vcard.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "description": "netlify functions:create - set up for apollo graphql",
+  "main": "apollo-graphql.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "netlify",
+    "serverless",
+    "js",
+    "apollo"
+  ],
+  "author": "Netlify",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-lambda": "^2.18.1",
+    "graphql": "^14.1.1"
+  }
 }

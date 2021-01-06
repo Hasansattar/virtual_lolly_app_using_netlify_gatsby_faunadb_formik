@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { navigate } from "gatsby"
+// import { navigate } from "gatsby"
 import Lolly from "./../components/lolly"
 import './style.css'
 import { useQuery, useMutation } from '@apollo/client';
@@ -97,9 +97,7 @@ export default function Home() {
           <textarea placeholder="Enter YOur Message" ref={msgField}></textarea>
           <input type="text" placeholder="Form" ref={senderField} />
 
-          <button onClick={handleSubmit} onClick={() => {
-          navigate("/template")
-        }} >Freeze Lolly</button>
+          <button onClick={handleSubmit}  >Freeze Lolly</button>
 
 
 

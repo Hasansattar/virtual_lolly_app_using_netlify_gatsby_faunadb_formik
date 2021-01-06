@@ -2,6 +2,7 @@ import React from 'react'
 import Lolly from "../components/lolly"
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
+import { navigate } from 'gatsby';
 
 
 const GET_DATA = gql`{
@@ -13,14 +14,14 @@ const GET_DATA = gql`{
      msg
      rec
      sender
-      link
+     link
      
     
   }
 }`;
 
 
-export default function Template() {
+export default function Template(getVCard) {
 
     const { loading, error, data } = useQuery(GET_DATA);
     console.log("queary data",data)
@@ -28,12 +29,45 @@ export default function Template() {
     return <h2>loading..</h2>
   if (error)
     return <h2>error</h2>
+
+     
               
-    return (
+    return (<>
 
              
         <div>
-            <Lolly top={data.getVCard[0].c1} middle={data.getVCard[0].c2} bottom={data.getVCard[0].c3}/>
+           <h1>Share lolly with this link:</h1>
+              {data.getVCard.map((d,i)=>{
+               
+                console.log(d)
+                      
+                         
+                return(  <>
+                <div className="container-lolly">
+                   <div key={d.id} className="display-lolly">
+                     <div className="lol">
+                   <Lolly top={d.c1} middle={d.c2} bottom={d.c3}/>   
+                   <h1>{`http://localhost:8888/${d.link}`}</h1>
+                   </div>
+                   <div className="resultCard">
+                <p className="reciever">To:{d.rec}</p>
+                <p className="message">Message:{d.msg}</p>
+                <p className="sender">From:{d.sender}</p>
+            
         </div>
-    )
+                   </div>  
+                   
+                   
+                   </div>   </>  ) 
+     
+   })}
+
+<button onClick={()=>navigate("/Home")}>Go Back</button>
+
+
+
+
+             
+        </div>
+  </> )
 }

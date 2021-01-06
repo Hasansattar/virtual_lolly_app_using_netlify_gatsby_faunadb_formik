@@ -1,10 +1,15 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
+ 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+   
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "GCMS",
+        fieldName: "getVCard",
+        url: "https://silly-haibt-b5ca26.netlify.app/.netlify/functions/vCard",
+      },
+    },
+  ],
 }
