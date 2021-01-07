@@ -8,7 +8,7 @@ module.exports = {
       options: {
         typeName: "GCMS",
         fieldName: "getVCard",
-        url: "https://silly-haibt-b5ca26.netlify.app/.netlify/functions/vCard",
+        url: "https://festive-cori-74da1c.netlify.app/.netlify/functions/vCard",
       },
     },
   ],
