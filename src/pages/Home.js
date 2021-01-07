@@ -2,24 +2,25 @@ import React, { useRef, useState } from "react"
 // import { navigate } from "gatsby"
 import Lolly from "./../components/lolly"
 import './style.css'
-import { useQuery, useMutation } from '@apollo/client';
+import {  useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import { navigate } from "gatsby";
 
 
-const GET_DATA = gql`{
-  getVCard{
-    id
-     c1
-     c2
-     c3
-     msg
-     rec
-     sender
-      link
+// const GET_DATA = gql`{
+//   getVCard{
+//     id
+//      c1
+//      c2
+//      c3
+//      msg
+//      rec
+//      sender
+//       link
      
     
-  }
-}`;
+//   }
+// }`;
 
 const ADD_DATA = gql`
 mutation addVCard($c1:String!,$c2:String!,$c3:String!,$rec:String!,$sender:String!,$msg:String!){
@@ -53,11 +54,12 @@ export default function Home() {
         c3: c3,
         rec: receiverField.current.value,
         sender: senderField.current.value,
-        msg: msgField.current.value
+        msg: msgField.current.value,
 
       }
     })
-
+       
+      navigate("/template")
   }
 
 
@@ -69,12 +71,12 @@ export default function Home() {
 
 
 
-  const { loading, error, data } = useQuery(GET_DATA);
-  console.log("queary data",data)
-  if (loading)
-    return <h2>loading..</h2>
-  if (error)
-    return <h2>error</h2>
+  // const { loading, error, data } = useQuery(GET_DATA);
+  // console.log("queary data",data)
+  // if (loading)
+  //   return <h2>loading..</h2>
+  // if (error)
+  //   return <h2>error</h2>
 
 
 
